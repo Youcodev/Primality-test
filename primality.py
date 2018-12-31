@@ -5,8 +5,8 @@
 # given that all prime numbers, except 2 and 3, are of this form
 
 def primality(n):
-    if(n <= 3): # 2 and 3 are prime numbers, but 1 is not 
-        return n > 1 # By definition, a prime number must be a positive integer greater than one
+    if(n <= 3): # 2 and 3 are prime numbers
+        return True
     if(n % 2 == 0): # Input number is even
         primality.m = 2
         return False
@@ -25,5 +25,8 @@ def primality(n):
         m = m + 4
     return True
 
-nbr = input("\nHello ! Enter a number to check if it's prime: ")
-print("\nThe number you entered is prime") if primality(int(nbr)) else print("\nThe number you entered is not prime. It's divisible by " + str(primality.m)) 
+nbr = input("\nHello ! Enter a positive number greater than one to check if it's prime: ")
+if(nbr.isdigit() and int(nbr) > 1):
+    print("\nThe number you entered is prime") if primality(int(nbr)) else print("\nThe number you entered is not prime. It's divisible by " + str(primality.m)) 
+else:
+    print("\nYou didn't enter a valid number ! By definition, a prime number must be a positive integer greater than one")
