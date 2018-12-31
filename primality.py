@@ -5,8 +5,8 @@
 # given that all prime numbers, except 2 and 3, are of this form
 
 def primality(n):
-    if(n == 2 or n == 3): # 2 and 3 are prime numbers
-        return True 
+    if(n <= 3): # 2 and 3 are prime numbers, but 1 is not 
+        return n > 1 # By definition, a prime number must be a positive integer greater than one
     if(n % 2 == 0): # Input number is even
         primality.m = 2
         return False
